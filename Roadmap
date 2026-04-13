@@ -1,0 +1,277 @@
+📍 Clair V3 — Roadmap
+Status: Active Development
+Current Phase: Phase 4 — Stress Validation & Behavioral Hardening
+Version Band: V3.2+
+
+Clair V3 has completed its structural rebuild and baseline validation. The system is now entering capability expansion, stress validation, and long‑term hardening. This roadmap outlines the remaining work required to move from a validated cognitive core to a robust, extensible cognitive architecture.
+
+🧱 Phase 1 — Rebuild (Completed)
+Goal: Reconstruct Clair from first principles with strict separation of concerns.
+
+✔ Completed Milestones
+Intake → Perception → Memory spine rebuilt
+
+Layered memory substrate (WM → Episodic → LTM)
+
+Epistemic loop (verification + calibration)
+
+Orchestrator control loop
+
+Reasoning path + AnswerGate
+
+Planning pipeline + simulator
+
+Response formatter
+
+Bootstrap + modular config
+
+Calibration wiring (ACC + cerebellar)
+
+Reflection + evaluation integration
+
+Outcome:  
+A structurally stable, testable cognitive system with clean boundaries and no cross‑layer contamination.
+
+🧪 Phase 2 — Stabilization & Validation (Completed)
+Goal: Validate the architecture under controlled conditions.
+
+✔ Completed Milestones
+Smoke tests for all major subsystems
+
+Verification + calibration loop validation
+
+Retrieval ranking validation
+
+Planning pipeline validation
+
+Orchestrator flow validation
+
+Response formatting validation
+
+Memory mutation + truth governance validation
+
+Full behavioral validation suite:
+
+Correction flow
+
+Denial flow
+
+Confirmation flow
+
+Conflict resolution
+
+Deprecated memory suppression
+
+Audit integrity
+
+Outcome:  
+Clair V3 reached a validated baseline with consistent adaptive learning behavior.
+
+🔥 Phase 3 — Behavioral Learning Loop (Completed)
+Goal: Prove that Clair can learn, correct itself, and update memory safely.
+
+✔ Completed Milestones
+Full correction cycle:
+
+Identify low‑confidence fact
+
+Generate calibration prompt
+
+Accept correction
+
+Install corrected memory
+
+Deprecate incorrect memory
+
+Update retrieval behavior
+
+ACC candidate generation
+
+Cerebellar correction‑install path
+
+MemoryAccessLayer normalization
+
+Audit logging of feedback events
+
+Stress tests for:
+
+Ambiguous input
+
+Memory pressure
+
+Learning loop
+
+ACC forced candidate
+
+Outcome:  
+Clair V3 is now an adaptive epistemic system, not a static reasoning engine.
+
+🚧 Phase 4 — Stress Validation & Behavioral Hardening (In Progress)
+Goal: Ensure Clair behaves correctly under noisy, ambiguous, or adversarial conditions.
+
+🔄 Active Work
+Strengthen ambiguous‑input routing
+
+Harden memory pressure ranking
+
+Improve deprecated‑memory suppression
+
+Fix ACC candidate surfacing inconsistencies
+
+Standardize enum + truth‑state normalization
+
+Improve object/dict coercion in memory surfaces
+
+Validate calibration visibility across all layers
+
+Expand stress tests for:
+
+noisy retrieval
+
+conflicting evidence
+
+multi‑step corrections
+
+large episodic buffers
+
+🎯 Expected Outcome
+A robust, trustworthy cognitive system that remains stable under load and ambiguity.
+
+📚 Phase 5 — Memory Seeding & Knowledge Expansion
+Goal: Populate Clair with controlled, high‑quality seed knowledge to activate calibration and retrieval behavior at scale.
+
+Planned Tasks
+Seed verified factual knowledge
+
+Seed low‑confidence facts for calibration testing
+
+Seed numeric conflict pairs
+
+Seed domain‑specific knowledge (safety, geography, procedures)
+
+Validate:
+
+retrieval ranking
+
+conflict detection
+
+calibration question generation
+
+correction behavior at scale
+
+Expected Outcome
+A memory substrate large enough to meaningfully exercise Clair’s epistemic and retrieval systems.
+
+🧩 Phase 6 — API & Interface Integration
+Goal: Expose Clair’s cognition through a clean, stable interface layer.
+
+Planned Tasks
+Define stable API endpoints for:
+
+intake
+
+recall
+
+verification
+
+calibration
+
+planning
+
+reflection
+
+maintenance
+
+Harden the React dashboard as an observational layer
+
+Add:
+
+memory viewer
+
+ACC queue viewer
+
+calibration question viewer
+
+reasoning trace viewer
+
+orchestrator flow visualization
+
+Expected Outcome
+A developer‑friendly interface for observing and interacting with Clair’s cognition.
+
+🧠 Phase 7 — Capability Expansion
+Goal: Add new cognitive capabilities without violating V3 boundaries.
+
+Planned Additions
+Multi‑document reasoning
+
+Multi‑step planning
+
+Improved hazard context modeling
+
+Domain inference improvements
+
+Better reading‑fallback strategies
+
+More robust AnswerGate heuristics
+
+Expanded reflection → learning pathways
+
+Expected Outcome
+A more capable cognitive system that remains grounded, governed, and testable.
+
+🛡️ Phase 8 — Hardening & Regression Coverage
+Goal: Prepare Clair for public release and external contributors.
+
+Planned Tasks
+Full regression suite
+
+Stress tests across all layers
+
+Memory stress tests (large LTM)
+
+Calibration stress tests
+
+Planning stress tests
+
+API stability guarantees
+
+Documentation hardening
+
+Contributor guidelines
+
+Architecture diagrams
+
+Expected Outcome
+A hardened, well‑documented, contributor‑ready cognitive architecture.
+
+🚀 Phase 9 — Public Release (Future)
+Goal: Release Clair V3 as an open, research‑grade cognitive architecture.
+
+Deliverables
+Public code release
+
+Full documentation
+
+Architecture whitepaper
+
+Example notebooks
+
+Demo UI
+
+Benchmarks
+
+Versioned releases
+
+🏁 Long‑Term Vision
+Clair V3 is the foundation for:
+
+A transparent, modular cognitive architecture
+
+A governed reasoning system with no hallucinations
+
+A real epistemic learning loop
+
+A research platform for cognitive AI
+
+A system that evolves through correction, not guesswork
