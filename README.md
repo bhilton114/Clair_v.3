@@ -1,174 +1,33 @@
-# Clair_v.3
-A Modular, Neuroscience‑Inspired Cognitive Architecture
-Version: V3.2+ (Validated Baseline)
-Status: Active Development — Phase 4 (Stress Validation & Behavioral Hardening)
+Clair V3 is a governed cognitive architecture built around strict separation of concerns, a validated epistemic loop, and a layered memory substrate. The system enforces clean cognitive boundaries across intake, perception, affect, reasoning, calibration, planning, memory, and action execution.
 
-Clair V3 is a layered cognitive system built with strict separation of concerns, governed reasoning, and a fully validated epistemic loop. It is not a chatbot, not an LLM wrapper, and not a monolithic AI script — it is a structured cognitive engine with real memory, verification, calibration, planning, and reflection.
+Core Principles
+No cross‑layer leakage — each module performs exactly one cognitive role.
 
-Clair V3 has successfully transitioned from a fragmented rebuild into a cohesive, testable, adaptive cognitive system.
+Transparent reasoning pipeline — every step is explicit, inspectable, and verifiable.
 
-🧠 Core Architectural Model
-Clair V3 is built as a layered cognitive pipeline:
+Epistemic discipline — uncertainty is tracked, verified, and corrected rather than hallucinated.
 
-Code
-Input → Perception → Memory → Retrieval → Reasoning
-           ↓              ↓
-      Epistemic Tagging   Calibration
-           ↓              ↓
-        Verification → Truth Governance
-                          ↓
-Execution → Evaluation → Reflection → Memory
-                          ↓
-                    Maintenance / Learning
-Key Rule:
+Adaptive correction loop — Clair evaluates her own actions and updates memory accordingly.
 
-No module owns more than one cognitive responsibility.
+High‑Level Cognitive Loop
+Intake — collect raw input, normalize, segment, classify uncertainty.
 
-This rule is the backbone of V3’s stability, testability, and non‑hallucinatory behavior.
+Perception — extract meaning (claims, frames, semantic units) without truth judgment.
 
-🏛️ System Layers Overview
-1. Input Layer — Stable
-Raw ingestion (text, files, feedback)
+Affect — regulate global cognitive mode, risk posture, and behavioral biases.
 
-Normalization + InputPacket construction
+Reasoning — interpret, infer, and generate candidate answers.
 
-Deterministic, guarded boundary
+Calibration — validate claims, check evidence, gate unsafe or unverified output.
 
-No reasoning leakage
+Planning — simulate outcomes, evaluate options, control horizon.
 
-2. Perception Layer — Stable
-Structural decomposition
+Action Selection — choose the safest, most effective action.
 
-Semantic unit extraction
+Execution — perform the action and return structured results.
 
-Epistemic tagging prep
+Evaluation — score outcomes, detect success/failure, estimate confidence.
 
-Clean separation of structure vs meaning
+Reflection — commit structured episodic memory.
 
-3. Memory Ingest (Hippocampus) — Stable
-Converts perceived content → canonical MemoryRecord
-
-Integrates epistemic tags
-
-Routes to memory layers
-
-4. Layered Memory Substrate — Stable
-Working Memory — active buffer
-
-Episodic Memory — recent experience
-
-Long‑Term Memory — persistent SQLite‑backed knowledge
-
-Truth governance + retrieval policy + promotion bridge
-
-5. Verification + Calibration (Epistemic Loop) — Validated
-Evidence extraction
-
-Support vs contradiction evaluation
-
-Truth‑state assignment
-
-Confidence shaping
-
-Truth states: verified, provisional, ambiguous, conflicted, rejected, unknown
-
-6. Orchestrator (Control Loop) — Fully Integrated
-Routes via thalamus
-
-Coordinates verification, calibration, retrieval, reasoning, planning, reflection
-
-Unified cognitive control loop
-
-7. Reasoning System — Governed
-Fact recall
-
-Reading‑based answering
-
-Fallback strategies
-
-AnswerGate blocks unsupported answers
-
-Defaults to “insufficient” instead of hallucinating
-
-8. Planning System — Active
-Hazard detection
-
-Domain inference
-
-Action generation
-
-Simulation + selection
-
-Full decision‑preparation pipeline
-
-9. Execution → Evaluation → Reflection — Integrated
-Executes actions
-
-Scores performance
-
-Commits episodic memory
-
-Reflection no longer invents truth
-
-10. Calibration & Maintenance — Newly Integrated
-ACC audit system
-
-Cerebellar correction + maintenance
-
-Drift detection
-
-Memory correction loop
-
-Runtime calibration access
-
-✅ Validation Status
-Clair V3 has passed:
-
-Intake → Memory spine
-
-Memory layer split
-
-Epistemic loop
-
-Orchestrator flow
-
-Reasoning path
-
-Planning pipeline
-
-Response formatting
-
-Calibration wiring
-
-Full behavioral validation suite
-
-Stress tests (ambiguous input, memory pressure, learning loop)
-
-Result:
-
-Clair V3 is now a validated adaptive cognitive system.
-
-🔥 Recent Breakthrough: Full Learning Loop
-Clair V3 successfully executed a complete correction cycle:
-
-Identified low‑confidence fact
-
-Generated calibration prompt
-
-Accepted user correction
-
-Installed corrected memory
-
-Deprecated incorrect memory
-
-Updated retrieval behavior
-
-Produced correct answer post‑learning
-
-Example:
-
-Before: “The capital of Australia is Sydney.”
-
-After correction: “The capital of Australia is Canberra.”
-
-This marks the transition from static reasoning → adaptive epistemic cognition.
+Memory Systems — working, episodic, and long‑term memory with conflict handling and truth governance.
