@@ -1,0 +1,72 @@
+Clair V3 Audit Summary (Intake → Affect → Memory → Verification → Runtime)
+Intake Layer
+Clean input collection and normalization.
+
+Major fix: removed early reasoning from processor.py.
+
+Document reader split: ingestion stays, retrieval/memory formatting moved downstream.
+
+Seeds and scenarios moved out of intake.
+
+Decision Layer
+Validator reclassified as Action Selection.
+
+Reasoning module split into: reasoning core, retrieval, hazard detection, calibration, response formatting.
+
+Planning Layer
+Simulator kept for true planning only.
+
+Retrieval, hazard detection, seed generation, and text helpers moved to proper layers.
+
+Affect Layer
+Risk assessor clean and stable.
+
+Hypothalamus regulates global cognitive mode and behavioral hysteresis.
+
+System‑Wide Pattern
+V2 problem: modules became “too helpful” and blurred boundaries.
+
+V3 fix: strict layer responsibilities enforced.
+
+Memory Architecture
+Working memory split into: core, promotion bridge, retrieval policy, truth governance, legacy compatibility.
+
+Episodic memory clean and focused.
+
+Long‑term memory modularized into storage, deduplication, conflict handling, normalization, scoring.
+
+Routing
+Thalamus router remains a pure dispatcher.
+
+Central orchestrator extracted from overgrown V2 thalamus.
+
+Verification
+Source extraction, evidence evaluation, and verification orchestration reclassified under a dedicated verification subsystem.
+
+Execution, Evaluation, Reflection
+All three layers remain clean and isolated.
+
+Reflection commits structured episodic records.
+
+Evaluation provides deterministic scoring.
+
+Execution simulates or performs actions with structured outputs.
+
+Runtime (clair.py)
+Over‑centralized in V2.
+
+V3 splits into:
+
+runtime/bootstrap
+
+orchestrator
+
+CLI interface
+
+response manager
+
+verification service wrapper
+
+retrieval helpers
+
+ingest helpers
