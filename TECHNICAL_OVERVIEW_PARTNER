@@ -1,0 +1,244 @@
+Technical Overview
+1. What Clair Is
+Clair is a governed cognitive architecture designed to deliver transparent, verifiable, long‑horizon reasoning.
+She is not a monolithic model — she is a modular cognitive system that orchestrates perception, reasoning, memory, calibration, planning, and action selection through strict separation of concerns.
+
+Clair’s architecture enforces a validated epistemic loop, enabling her to explain, verify, and correct her own reasoning in real time.
+
+2. Why Clair Exists
+Modern LLMs are powerful but fundamentally opaque.
+They blend perception, reasoning, retrieval, and decision‑making into a single undifferentiated step, which makes:
+
+hallucinations hard to detect
+
+uncertainty hard to quantify
+
+long‑horizon tasks unstable
+
+safety and auditability difficult
+
+Clair solves this by making cognition explicit.
+
+Every cognitive function is isolated, inspectable, and testable.
+Every output is the result of a traceable pipeline rather than a single opaque forward pass.
+
+3. Architectural Overview
+Layered Cognitive Pipeline
+Clair V3 enforces a clean, modular architecture:
+
+Layer	Responsibility
+Intake	Collect raw input, normalize, segment, classify uncertainty
+Perception	Extract claims, frames, semantic units (no truth judgment)
+Affect	Regulate global cognitive mode, risk posture, behavioral hysteresis
+Reasoning	Interpret, infer, generate candidate answers
+Calibration	Verify claims, evaluate evidence, gate unsafe or unverified output
+Planning	Simulate outcomes, evaluate options, control horizon
+Action Selection	Choose the safest, most effective action
+Execution	Perform or simulate actions with structured results
+Evaluation	Score outcomes, detect success/failure, estimate confidence
+Reflection	Commit structured episodic memory
+Memory Systems	Working, episodic, long‑term memory with conflict handling and truth governance
+
+
+This pipeline is deterministic, auditable, and testable.
+
+4. Key Innovations
+4.1 Epistemic Loop
+Clair validates her own reasoning through a multi‑stage epistemic process:
+
+claim extraction
+
+evidence sourcing
+
+lexical + numeric consistency checks
+
+conflict detection
+
+confidence normalization
+
+calibration gating
+
+This prevents hallucinations and forces honest uncertainty reporting.
+
+4.2 Layered Memory Architecture
+Clair’s memory system is structured into:
+
+Working Memory — active context, short‑term reasoning state
+
+Episodic Memory — recent experiences, TTL‑based decay, promotion candidates
+
+Long‑Term Memory — durable knowledge with conflict tracking, revision merging, and evidence metadata
+
+Memory is not a blob — it is a governed knowledge substrate with:
+
+conflict‑pair preservation
+
+reinforcement behavior
+
+semantic revision
+
+trust scoring
+
+truth governance
+
+This enables stable long‑horizon reasoning and non‑hallucinatory recall.
+
+4.3 Strict Separation of Concerns
+Clair V2’s biggest issue was modules becoming “too helpful”:
+
+perception started reasoning
+
+reasoning started retrieving
+
+planning started interpreting
+
+routing started classifying
+
+Clair V3 fixes this with hard boundaries and clean contracts between modules.
+
+This is what makes Clair reliable under stress.
+
+4.4 Deterministic Verification Pipeline
+Verification is a dedicated subsystem:
+
+Source Extraction
+
+Evidence Evaluation
+
+Verification Orchestration
+
+It produces structured verdicts:
+
+supported
+
+contradicted
+
+mixed
+
+insufficient
+
+This feeds directly into calibration and action gating.
+
+4.5 Global Cognitive Mode (Affect Layer)
+The affect system regulates:
+
+risk posture
+
+behavioral biases
+
+cognitive mode selection
+
+hysteresis and cooldown
+
+This gives Clair stateful, adaptive behavior without leaking into reasoning.
+
+5. What Clair Enables
+5.1 Transparent Reasoning
+Every cognitive step is inspectable:
+
+what was perceived
+
+what was inferred
+
+what was verified
+
+what was rejected
+
+what memory was used
+
+what simulation predicted
+
+why an action was chosen
+
+This is essential for safety‑critical and audit‑required domains.
+
+5.2 Long‑Horizon Stability
+Clair maintains coherence across:
+
+multi‑step tasks
+
+multi‑day sessions
+
+complex reasoning chains
+
+iterative refinement loops
+
+Her memory substrate and epistemic loop prevent drift.
+
+5.3 Hybrid Model Integration
+Clair can orchestrate:
+
+LLMs
+
+embedding models
+
+retrieval systems
+
+tool APIs
+
+simulators
+
+She is a model‑agnostic cognitive controller.
+
+6. Why Partner With Clair
+Clair offers a research‑grade platform for exploring:
+
+governed cognitive architectures
+
+verifiable reasoning
+
+hybrid model orchestration
+
+long‑horizon autonomy
+
+memory‑grounded agents
+
+epistemic safety systems
+
+She complements frontier models by providing:
+
+structure
+
+verification
+
+memory discipline
+
+action governance
+
+transparent reasoning
+
+Clair is a testbed for safe autonomous cognition.
+
+7. Current Status
+Clair V3 is in active development with:
+
+full architectural audit complete
+
+V3 module map defined
+
+boundaries enforced
+
+memory system modularization underway
+
+orchestrator extraction in progress
+
+GAIA‑style testing ongoing
+
+The system is ready for research collaboration, pilot deployments, and integration experiments.
+
+8. Partnership Opportunities
+Clair is ideal for partners exploring:
+
+safe autonomous agents
+
+verifiable reasoning pipelines
+
+hybrid cognitive systems
+
+memory‑centric architectures
+
+epistemic safety research
+
+long‑horizon task execution
+
+Clair is not a competitor to frontier models — she is a governed cognitive layer that makes them safer, more reliable, and more interpretable.
