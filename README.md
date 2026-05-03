@@ -1,33 +1,61 @@
-Clair V3 is a governed cognitive architecture built around strict separation of concerns, a validated epistemic loop, and a layered memory substrate. The system enforces clean cognitive boundaries across intake, perception, affect, reasoning, calibration, planning, memory, and action execution.
+# Clair V3.3
 
-Core Principles
-No cross‑layer leakage — each module performs exactly one cognitive role.
+Clair is a solo-built correction-first cognitive agent prototype using three core loops:
 
-Transparent reasoning pipeline — every step is explicit, inspectable, and verifiable.
+- Reasoning: solves tasks and forms candidate answers
+- Calibration: checks truth, confidence, and evidence before output or storage
+- Maintenance: audits memory, reduces drift, and preserves system health
 
-Epistemic discipline — uncertainty is tracked, verified, and corrected rather than hallucinated.
+The goal is to build an inspectable agent architecture that can improve under benchmark pressure without poisoning its own memory.
 
-Adaptive correction loop — Clair evaluates her own actions and updates memory accordingly.
+## Current Status
 
-High‑Level Cognitive Loop
-Intake — collect raw input, normalize, segment, classify uncertainty.
+Experimental prototype. Not production-ready.
 
-Perception — extract meaning (claims, frames, semantic units) without truth judgment.
+## Current GAIA-Style Baseline
 
-Affect — regulate global cognitive mode, risk posture, and behavioral biases.
+- Behavior: 50/50
+- Answer quality: 14/50
+- Average score: 0.28
+- Generic responses: 0
+- Unrelated memory errors: 0
+- Needs tool/document support: 33
 
-Reasoning — interpret, infer, and generate candidate answers.
+## Why Clair Is Different
 
-Calibration — validate claims, check evidence, gate unsafe or unverified output.
+Most agent systems focus on acting and remembering.
+Clair focuses on correction before memory.
 
-Planning — simulate outcomes, evaluate options, control horizon.
+The system is designed around:
+- strict module boundaries
+- verification-based storage
+- correction dominance
+- memory governance
+- failure-class testing
+- benchmark-driven improvement
 
-Action Selection — choose the safest, most effective action.
+## Architecture
 
-Execution — perform the action and return structured results.
+[Insert diagram here]
 
-Evaluation — score outcomes, detect success/failure, estimate confidence.
+## Main System Layers
 
-Reflection — commit structured episodic memory.
+- Intake
+- Perception
+- Reasoning
+- Calibration
+- Planning
+- Action Selection
+- Execution
+- Evaluation
+- Reflection
+- Memory
+- Maintenance
 
-Memory Systems — working, episodic, and long‑term memory with conflict handling and truth governance.
+## Roadmap
+
+- Add real PDF extraction
+- Add real XLSX extraction
+- Improve document support solver
+- Reduce tool/document failures
+- Push GAIA-style answer quality from 28% toward 55%+
