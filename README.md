@@ -1,5 +1,5 @@
 # Clair V3.3
-
+Core implementation is currently private while patent and licensing options are evaluated.
 Clair is a solo-built correction-first cognitive agent prototype using three core loops:
 
 - Reasoning: solves tasks and forms candidate answers
