@@ -1,0 +1,30 @@
+# Clair V3 Benchmark Results
+
+## Current Validation Snapshot
+
+| Test Area | Result | Status |
+|---|---:|---|
+| Smoke Suite | 202 passed | Green |
+| Real GAIA-Style Runner | 33/50 answer quality | Active improvement |
+| Behavior Safety | 50/50 | Green |
+| Generic Responses | 0 | Green |
+| Unrelated Memory Errors | 0 | Green |
+| Tool/Document Support Needed | 33 | Main bottleneck |
+
+## Latest Real GAIA-Style Run
+
+- **Total tasks:** 50
+- **Behavior passed:** 50/50
+- **Answer quality:** 33/50
+- **Average answer score:** 0.66
+- **Generic responses:** 0
+- **Unrelated memory errors:** 0
+- **Needs tool/document support:** 33
+
+## Interpretation
+
+Clair is currently behavior-stable under benchmark pressure. The main limitation is not basic behavior collapse, but missing or incomplete tool/document support, especially for broad web search, documents, images, audio, and file-based tasks.
+
+## Public Release Note
+
+The full benchmark harness, task prompts, answer keys, runner code, and internal smoke tests are private to avoid answer leakage, overfitting, and exposure of implementation-specific system logic.
