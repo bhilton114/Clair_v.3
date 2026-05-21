@@ -1,244 +1,390 @@
-Technical Overview
-1. What Clair Is
-Clair is a governed cognitive architecture designed to deliver transparent, verifiable, long‑horizon reasoning.
-She is not a monolithic model — she is a modular cognitive system that orchestrates perception, reasoning, memory, calibration, planning, and action selection through strict separation of concerns.
+# Clair V3.3 Simple Technical Overview
 
-Clair’s architecture enforces a validated epistemic loop, enabling her to explain, verify, and correct her own reasoning in real time.
+Clair V3.3 is a private-core cognitive AI prototype built around a layered reasoning architecture.
 
-2. Why Clair Exists
-Modern LLMs are powerful but fundamentally opaque.
-They blend perception, reasoning, retrieval, and decision‑making into a single undifferentiated step, which makes:
+The system is designed to process input, understand task shape, use memory, verify information, reason through answers, use tools when needed, and reflect on results.
 
-hallucinations hard to detect
+The core source code is currently private. This overview describes the system at a high level without exposing implementation details.
 
-uncertainty hard to quantify
+---
 
-long‑horizon tasks unstable
+## 1. System Goal
 
-safety and auditability difficult
+Clair is designed to be a governed cognitive reasoner.
 
-Clair solves this by making cognition explicit.
+The goal is not only to produce answers, but to manage the process behind answers:
 
-Every cognitive function is isolated, inspectable, and testable.
-Every output is the result of a traceable pipeline rather than a single opaque forward pass.
+```text
+What is being asked?
+What information is available?
+What is missing?
+Can memory help?
+Is a document or source needed?
+Does the answer need verification?
+Is the response safe and supported?
+Should anything be learned from this?
+2. High-Level Flow
 
-3. Architectural Overview
-Layered Cognitive Pipeline
-Clair V3 enforces a clean, modular architecture:
+Clair’s intended processing flow is:
 
-Layer	Responsibility
-Intake	Collect raw input, normalize, segment, classify uncertainty
-Perception	Extract claims, frames, semantic units (no truth judgment)
-Affect	Regulate global cognitive mode, risk posture, behavioral hysteresis
-Reasoning	Interpret, infer, generate candidate answers
-Calibration	Verify claims, evaluate evidence, gate unsafe or unverified output
-Planning	Simulate outcomes, evaluate options, control horizon
-Action Selection	Choose the safest, most effective action
-Execution	Perform or simulate actions with structured results
-Evaluation	Score outcomes, detect success/failure, estimate confidence
-Reflection	Commit structured episodic memory
-Memory Systems	Working, episodic, long‑term memory with conflict handling and truth governance
+Input
+ → Perception
+ → Context
+ → Memory
+ → Retrieval
+ → Reasoning
+ → Tool Support
+ → Verification
+ → Calibration
+ → Answer Gate
+ → Response
+ → Reflection
+ → Learning
 
+Each layer is meant to handle one kind of cognitive responsibility.
 
-This pipeline is deterministic, auditable, and testable.
+3. Main Layers
+Input Layer
 
-4. Key Innovations
-4.1 Epistemic Loop
-Clair validates her own reasoning through a multi‑stage epistemic process:
+The input layer receives raw user input, files, documents, or task packets.
 
-claim extraction
+Its job is to:
 
-evidence sourcing
+collect input
+normalize text
+package information into a system packet
+pass the packet forward
 
-lexical + numeric consistency checks
+It should not perform reasoning or make truth decisions.
 
-conflict detection
+Perception Layer
 
-confidence normalization
+The perception layer identifies the shape of the input.
 
-calibration gating
+It helps detect:
 
-This prevents hallucinations and forces honest uncertainty reporting.
+whether the input is a question, command, document, memory request, or task
+whether the input contains uncertainty
+whether the input appears document-scoped
+whether information should be treated as temporary context or possible memory
 
-4.2 Layered Memory Architecture
-Clair’s memory system is structured into:
+The perception layer prepares structure, but does not decide final truth.
 
-Working Memory — active context, short‑term reasoning state
+Context Layer
 
-Episodic Memory — recent experiences, TTL‑based decay, promotion candidates
+The context layer manages active information for the current task.
 
-Long‑Term Memory — durable knowledge with conflict tracking, revision merging, and evidence metadata
+Examples:
 
-Memory is not a blob — it is a governed knowledge substrate with:
+inline document text
+uploaded document text
+current conversation context
+temporary task-specific facts
+source scope
 
-conflict‑pair preservation
+This layer helps Clair avoid confusing temporary context with long-term memory.
 
-reinforcement behavior
+Memory Layer
 
-semantic revision
+Clair uses multiple memory concepts:
 
-trust scoring
+Working Memory
+ → short-term active context
 
-truth governance
+Episodic Memory
+ → recent experiences and events
 
-This enables stable long‑horizon reasoning and non‑hallucinatory recall.
+Semantic Memory
+ → extracted facts, claims, concepts, and summaries
 
-4.3 Strict Separation of Concerns
-Clair V2’s biggest issue was modules becoming “too helpful”:
+Long-Term Memory
+ → durable stored knowledge
 
-perception started reasoning
+The memory system is designed to support correction, reinforcement, contradiction handling, and promotion from temporary memory into durable memory.
 
-reasoning started retrieving
+Important rule:
 
-planning started interpreting
+Not everything should become long-term memory.
 
-routing started classifying
+Raw pasted text and inline documents should usually remain temporary unless explicitly saved or promoted.
 
-Clair V3 fixes this with hard boundaries and clean contracts between modules.
+Retrieval Layer
 
-This is what makes Clair reliable under stress.
+The retrieval layer selects relevant memories for the current task.
 
-4.4 Deterministic Verification Pipeline
-Verification is a dedicated subsystem:
+It should prevent unrelated memories from hijacking answers.
 
-Source Extraction
+A key rule:
 
-Evidence Evaluation
+Relevance must come before confidence.
 
-Verification Orchestration
+A high-confidence memory should not be used if it is unrelated to the question.
 
-It produces structured verdicts:
+Reasoning Layer
+
+The reasoning layer interprets the task and builds a candidate answer.
+
+It may use:
+
+current context
+relevant memory
+document support
+tool results
+fallback reasoning
+bounded solver modules
+
+The reasoning layer should not blindly answer if support is weak.
+
+Tool Support Layer
+
+The tool layer gives Clair access to external or specialized capabilities.
+
+Examples of tool-supported tasks include:
+
+source lookup
+reference lookup
+document reading
+audio metadata
+table or chart extraction
+external evidence gathering
+
+The long-term goal is capability-based tool use:
+
+NeedDetector
+ → CapabilityPlanner
+ → ToolSelector
+ → ToolRunner
+ → ToolResultInterpreter
+
+This means Clair should choose tools because of what is missing, not because a benchmark phrase matched.
+
+Verification Layer
+
+The verification layer checks whether information is supported.
+
+It helps classify claims as:
 
 supported
-
 contradicted
-
 mixed
-
 insufficient
+unknown
 
-This feeds directly into calibration and action gating.
+Verification is important before trusting factual claims or promoting information into long-term memory.
 
-4.5 Global Cognitive Mode (Affect Layer)
-The affect system regulates:
+Calibration Layer
 
-risk posture
+The calibration layer manages confidence and truth-state behavior.
 
-behavioral biases
+It helps decide whether information should be:
 
-cognitive mode selection
+trusted
+questioned
+corrected
+marked provisional
+sent for verification
+blocked from final answer use
 
-hysteresis and cooldown
+Calibration prevents the system from treating all memories or answers as equally reliable.
 
-This gives Clair stateful, adaptive behavior without leaking into reasoning.
+Answer Gate
 
-5. What Clair Enables
-5.1 Transparent Reasoning
-Every cognitive step is inspectable:
+The answer gate decides whether a final response is allowed.
 
-what was perceived
+It checks:
 
-what was inferred
+support level
+confidence
+relevance
+safety
+contradiction
+source grounding
 
-what was verified
+If the answer is not supported, Clair should say what is missing instead of guessing.
 
-what was rejected
+Response Layer
 
-what memory was used
+The response layer formats the final output.
 
-what simulation predicted
+It should communicate:
 
-why an action was chosen
+the answer
+uncertainty when needed
+source or support status when relevant
+refusal or insufficiency when required
 
-This is essential for safety‑critical and audit‑required domains.
+The response layer should not create new reasoning by itself.
 
-5.2 Long‑Horizon Stability
-Clair maintains coherence across:
+Reflection Layer
 
-multi‑step tasks
+The reflection layer records outcomes and lessons from completed tasks.
 
-multi‑day sessions
+It helps Clair learn from:
 
-complex reasoning chains
+corrections
+failures
+successful actions
+unsupported answers
+routing mistakes
+tool failures
 
-iterative refinement loops
+Reflection supports gradual improvement.
 
-Her memory substrate and epistemic loop prevent drift.
+Learning Loop
 
-5.3 Hybrid Model Integration
-Clair can orchestrate:
+Clair’s learning process is intended to work like this:
 
-LLMs
+Experience
+ → memory candidate
+ → verification/calibration
+ → correction or confirmation
+ → promotion decision
+ → future recall behavior changes
 
-embedding models
+This makes learning governed rather than automatic.
 
-retrieval systems
+4. Core Loop Design
 
-tool APIs
+Clair is built around multiple loops.
 
-simulators
+Reasoning Loop
 
-She is a model‑agnostic cognitive controller.
+Used to understand the task and build a possible answer.
 
-6. Why Partner With Clair
-Clair offers a research‑grade platform for exploring:
+understand → reason → detect weak spots → revise
+Verification Loop
 
-governed cognitive architectures
+Used to check whether the answer is supported.
 
-verifiable reasoning
+claim → evidence → support/conflict/insufficient
+Memory / Reflection Loop
 
-hybrid model orchestration
+Used to learn from outcomes.
 
-long‑horizon autonomy
+experience → record → review → update future behavior
+Resourcefulness Loop
 
-memory‑grounded agents
+Used when information is missing.
 
-epistemic safety systems
+detect missing need → select capability → use tool/fallback → evaluate result
+5. Current Capabilities
 
-She complements frontier models by providing:
+Clair V3.3 has demonstrated progress in:
 
-structure
+structured input handling
+task classification
+memory storage and recall
+correction-aware memory behavior
+answer gating
+document/context reasoning
+inline document question answering
+bounded solver modules
+source/reference lookup support
+GAIA-style stress testing
+reflection and evaluation loops
+6. Recent Improvements
 
-verification
+Recent work improved several core behaviors.
 
-memory discipline
+Memory Relevance Gate
 
-action governance
+Clair now rejects unrelated memory candidates before confidence scoring.
 
-transparent reasoning
+This prevents unrelated but high-confidence memories from being selected.
 
-Clair is a testbed for safe autonomous cognition.
+Inline Document Reasoning
 
-7. Current Status
-Clair V3 is in active development with:
+Clair can detect inline document prompts, extract the document body, identify the question, and answer from the supplied text.
 
-full architectural audit complete
+Bare Labeled Document Support
 
-V3 module map defined
+Clair can handle text structured like:
 
-boundaries enforced
+Project:
+Known risk:
+Required behavior:
+Question:
 
-memory system modularization underway
+without needing a special wrapper.
 
-orchestrator extraction in progress
+Multi-Line Section Selection
 
-GAIA‑style testing ongoing
+Clair can select the correct line from a multi-line labeled section.
 
-The system is ready for research collaboration, pilot deployments, and integration experiments.
+Benchmark Reframing
 
-8. Partnership Opportunities
-Clair is ideal for partners exploring:
+GAIA-style testing is now treated as a stress test, not as Clair’s identity.
 
-safe autonomous agents
+7. Current Weak Points
 
-verifiable reasoning pipelines
+Clair V3.3 is still experimental.
 
-hybrid cognitive systems
+Known weak points include:
 
-memory‑centric architectures
+tool use needs stronger capability planning
+explicit memory persistence needs further verification
+memory promotion needs cleanup
+memory/document comparison needs stronger support
+some solver paths are too benchmark-shaped
+some major files are bloat risks
+stronger regression testing is needed
+8. GAIA-Style Testing
 
-epistemic safety research
+Clair V3.3 was tested against a private GAIA-style 50-task runner.
 
-long‑horizon task execution
+Latest internal stress-test baseline:
 
-Clair is not a competitor to frontier models — she is a governed cognitive layer that makes them safer, more reliable, and more interpretable.
+Behavior passed       : 50/50
+Answer-quality passed : 50/50
+Average behavior      : 1.00
+Average answer score  : 1.00
+Generic responses     : 0
+Unrelated memories    : 0
+
+This is not a public leaderboard claim.
+
+It is an internal stress-test result used to expose strengths and weaknesses.
+
+The main lesson:
+
+Clair should use GAIA as a stress test, not become a GAIA solver.
+
+9. Current Roadmap
+
+The next development phase is focused on core cognition restoration.
+
+Priority order:
+
+1. Memory truth
+2. Context/document reasoning
+3. Action from uncertainty
+4. Capability-based tool use
+5. Verification-aware learning
+6. Regression and GAIA retesting
+10. Design Direction
+
+Clair V3.3 remains the active proof branch.
+
+Future V4 planning will likely use a cleaner hierarchy with stricter one-job modules, but V3 will continue to be used to prove which cognitive behaviors are real, reusable, and worth migrating.
+
+Design direction:
+
+V3 teaches.
+V4 crystallizes.
+11. Summary
+
+Clair V3.3 is a private experimental cognitive AI system.
+
+It is designed to:
+
+reason
+remember
+verify
+correct
+act
+recover
+learn
+
+under governance.
+
+The project is still in active development, but it has reached a serious prototype stage with validated stress-test progress and a clear restoration roadmap.
