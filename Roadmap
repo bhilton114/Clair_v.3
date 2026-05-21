@@ -1,277 +1,84 @@
-📍 Clair V3 — Roadmap
-Status: Active Development
-Current Phase: Phase 4 — Stress Validation & Behavioral Hardening
-Version Band: V3.2+
+# Clair V3.3
 
-Clair V3 has completed its structural rebuild and baseline validation. The system is now entering capability expansion, stress validation, and long‑term hardening. This roadmap outlines the remaining work required to move from a validated cognitive core to a robust, extensible cognitive architecture.
+**Clair is a private cognitive AI prototype focused on governed reasoning, memory, verification, and self-correction.**
 
-🧱 Phase 1 — Rebuild (Completed)
-Goal: Reconstruct Clair from first principles with strict separation of concerns.
+Clair is being developed as a solo-built, correction-first cognitive system. The core implementation is currently private while patent, licensing, and safety options are evaluated.
 
-✔ Completed Milestones
-Intake → Perception → Memory spine rebuilt
+This public repository is used to share safe project summaries, benchmark-style results, development direction, and high-level design goals without exposing the internal source code or construction methods.
 
-Layered memory substrate (WM → Episodic → LTM)
+---
 
-Epistemic loop (verification + calibration)
+## Current Status
 
-Orchestrator control loop
+Clair V3.3 has reached the stage of a serious working prototype.
 
-Reasoning path + AnswerGate
+The system has demonstrated:
 
-Planning pipeline + simulator
+- Stable behavior under structured testing
+- Controlled answer behavior
+- Memory-centered reasoning experiments
+- Verification and calibration workflows
+- Document/context handling improvements
+- Early tool-use and fallback routing
+- GAIA-style benchmark stress testing
+- Correction-first development discipline
 
-Response formatter
+Clair is not presented as finished or production-ready. Current work is focused on restoring and strengthening the core cognitive architecture before expanding capabilities further.
 
-Bootstrap + modular config
+---
 
-Calibration wiring (ACC + cerebellar)
+## Core Project Goal
 
-Reflection + evaluation integration
+Clair is intended to become a:
 
-Outcome:  
-A structurally stable, testable cognitive system with clean boundaries and no cross‑layer contamination.
+> Governed cognitive reasoner built around memory, reflection, verification, and moral constraint, designed to improve through interaction rather than static answering alone.
 
-🧪 Phase 2 — Stabilization & Validation (Completed)
-Goal: Validate the architecture under controlled conditions.
+The long-term goal is not to build a simple chatbot or benchmark solver.
 
-✔ Completed Milestones
-Smoke tests for all major subsystems
+The goal is to build a system that can:
 
-Verification + calibration loop validation
+- Understand task shape
+- Detect missing information
+- Use memory responsibly
+- Distinguish temporary context from durable memory
+- Verify before trusting
+- Recover from uncertainty
+- Select tools by capability
+- Reflect on failures
+- Improve over time within moral and safety boundaries
 
-Retrieval ranking validation
+---
 
-Planning pipeline validation
+## Design Philosophy
 
-Orchestrator flow validation
+Clair is built around several core principles:
 
-Response formatting validation
+1. **Know what she does not know**
+2. **Use memory carefully, not blindly**
+3. **Prefer verification over confidence**
+4. **Treat uncertainty as a signal to act, not a stopping point**
+5. **Keep cognitive modules focused on one job**
+6. **Correct mistakes instead of hiding them**
+7. **Avoid benchmark-specific shortcuts**
+8. **Preserve a governed moral code**
 
-Memory mutation + truth governance validation
+The project is being developed as a cognitive architecture first, not a neural-network-first system.
 
-Full behavioral validation suite:
+---
 
-Correction flow
+## Cognitive Direction
 
-Denial flow
+Clair’s intended reasoning pattern is:
 
-Confirmation flow
-
-Conflict resolution
-
-Deprecated memory suppression
-
-Audit integrity
-
-Outcome:  
-Clair V3 reached a validated baseline with consistent adaptive learning behavior.
-
-🔥 Phase 3 — Behavioral Learning Loop (Completed)
-Goal: Prove that Clair can learn, correct itself, and update memory safely.
-
-✔ Completed Milestones
-Full correction cycle:
-
-Identify low‑confidence fact
-
-Generate calibration prompt
-
-Accept correction
-
-Install corrected memory
-
-Deprecate incorrect memory
-
-Update retrieval behavior
-
-ACC candidate generation
-
-Cerebellar correction‑install path
-
-MemoryAccessLayer normalization
-
-Audit logging of feedback events
-
-Stress tests for:
-
-Ambiguous input
-
-Memory pressure
-
-Learning loop
-
-ACC forced candidate
-
-Outcome:  
-Clair V3 is now an adaptive epistemic system, not a static reasoning engine.
-
-🚧 Phase 4 — Stress Validation & Behavioral Hardening (In Progress)
-Goal: Ensure Clair behaves correctly under noisy, ambiguous, or adversarial conditions.
-
-🔄 Active Work
-Strengthen ambiguous‑input routing
-
-Harden memory pressure ranking
-
-Improve deprecated‑memory suppression
-
-Fix ACC candidate surfacing inconsistencies
-
-Standardize enum + truth‑state normalization
-
-Improve object/dict coercion in memory surfaces
-
-Validate calibration visibility across all layers
-
-Expand stress tests for:
-
-noisy retrieval
-
-conflicting evidence
-
-multi‑step corrections
-
-large episodic buffers
-
-🎯 Expected Outcome
-A robust, trustworthy cognitive system that remains stable under load and ambiguity.
-
-📚 Phase 5 — Memory Seeding & Knowledge Expansion
-Goal: Populate Clair with controlled, high‑quality seed knowledge to activate calibration and retrieval behavior at scale.
-
-Planned Tasks
-Seed verified factual knowledge
-
-Seed low‑confidence facts for calibration testing
-
-Seed numeric conflict pairs
-
-Seed domain‑specific knowledge (safety, geography, procedures)
-
-Validate:
-
-retrieval ranking
-
-conflict detection
-
-calibration question generation
-
-correction behavior at scale
-
-Expected Outcome
-A memory substrate large enough to meaningfully exercise Clair’s epistemic and retrieval systems.
-
-🧩 Phase 6 — API & Interface Integration
-Goal: Expose Clair’s cognition through a clean, stable interface layer.
-
-Planned Tasks
-Define stable API endpoints for:
-
-intake
-
-recall
-
-verification
-
-calibration
-
-planning
-
-reflection
-
-maintenance
-
-Harden the React dashboard as an observational layer
-
-Add:
-
-memory viewer
-
-ACC queue viewer
-
-calibration question viewer
-
-reasoning trace viewer
-
-orchestrator flow visualization
-
-Expected Outcome
-A developer‑friendly interface for observing and interacting with Clair’s cognition.
-
-🧠 Phase 7 — Capability Expansion
-Goal: Add new cognitive capabilities without violating V3 boundaries.
-
-Planned Additions
-Multi‑document reasoning
-
-Multi‑step planning
-
-Improved hazard context modeling
-
-Domain inference improvements
-
-Better reading‑fallback strategies
-
-More robust AnswerGate heuristics
-
-Expanded reflection → learning pathways
-
-Expected Outcome
-A more capable cognitive system that remains grounded, governed, and testable.
-
-🛡️ Phase 8 — Hardening & Regression Coverage
-Goal: Prepare Clair for public release and external contributors.
-
-Planned Tasks
-Full regression suite
-
-Stress tests across all layers
-
-Memory stress tests (large LTM)
-
-Calibration stress tests
-
-Planning stress tests
-
-API stability guarantees
-
-Documentation hardening
-
-Contributor guidelines
-
-Architecture diagrams
-
-Expected Outcome
-A hardened, well‑documented, contributor‑ready cognitive architecture.
-
-🚀 Phase 9 — Public Release (Future)
-Goal: Release Clair V3 as an open, research‑grade cognitive architecture.
-
-Deliverables
-Public code release
-
-Full documentation
-
-Architecture whitepaper
-
-Example notebooks
-
-Demo UI
-
-Benchmarks
-
-Versioned releases
-
-🏁 Long‑Term Vision
-Clair V3 is the foundation for:
-
-A transparent, modular cognitive architecture
-
-A governed reasoning system with no hallucinations
-
-A real epistemic learning loop
-
-A research platform for cognitive AI
-
-A system that evolves through correction, not guesswork
+```text
+Input
+ → Understand task
+ → Detect missing needs
+ → Check context
+ → Retrieve relevant memory
+ → Select capability
+ → Use tools or fallbacks
+ → Verify evidence
+ → Apply governance
+ → Answer or refuse
+ → Reflect and learn
