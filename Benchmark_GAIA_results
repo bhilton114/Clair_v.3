@@ -1,30 +1,32 @@
-# Clair V3 Benchmark Results
+## GAIA-Style Benchmark Summary
 
-## Current Validation Snapshot
+Clair V3.3 was tested against a private GAIA-style benchmark runner using a 50-task evaluation batch.
 
-| Test Area | Result | Status |
-|---|---:|---|
-| Smoke Suite | 202 passed | Green |
-| Real GAIA-Style Runner | 33/50 answer quality | Active improvement |
-| Behavior Safety | 50/50 | Green |
-| Generic Responses | 0 | Green |
-| Unrelated Memory Errors | 0 | Green |
-| Tool/Document Support Needed | 33 | Main bottleneck |
+The purpose of this benchmark work was not only to chase a score, but to stress-test Clair’s reasoning loop, memory behavior, routing stability, tool dependence, evidence handling, and answer safety under difficult multi-step question conditions.
 
-## Latest Real GAIA-Style Run
+GAIA-style tasks are useful because they often require combinations of:
 
-- **Total tasks:** 50
-- **Behavior passed:** 50/50
-- **Answer quality:** 33/50
-- **Average answer score:** 0.66
-- **Generic responses:** 0
-- **Unrelated memory errors:** 0
-- **Needs tool/document support:** 33
+- factual reasoning
+- external lookup
+- document or source interpretation
+- multi-hop clue following
+- table/chart reasoning
+- answer normalization
+- tool or attachment support
+- refusal when support is insufficient
 
-## Interpretation
+For Clair, GAIA was treated as a stress test for missing cognitive abilities, not as the system’s identity.
 
-Clair is currently behavior-stable under benchmark pressure. The main limitation is not basic behavior collapse, but missing or incomplete tool/document support, especially for broad web search, documents, images, audio, and file-based tasks.
+---
 
-## Public Release Note
+## Early GAIA Runner Contact
 
-The full benchmark harness, task prompts, answer keys, runner code, and internal smoke tests are private to avoid answer leakage, overfitting, and exposure of implementation-specific system logic.
+Clair’s first real GAIA runner contact verified that the system could process the full 50-task batch without crashing.
+
+Early result:
+
+```text
+Total tasks     : 50
+Passed tasks    : 50
+Behavior passed : 50
+Average score   : 1.00
