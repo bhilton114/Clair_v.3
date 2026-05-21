@@ -1,141 +1,84 @@
 # Clair V3.3
 
-**Clair V3.3** is a solo-built, correction-first cognitive agent prototype.
+**Clair is a private cognitive AI prototype focused on governed reasoning, memory, verification, and self-correction.**
 
-The core implementation is currently private while patent, licensing, and release options are evaluated.
+Clair is being developed as a solo-built, correction-first cognitive system. The core implementation is currently private while patent, licensing, and safety options are evaluated.
 
-Clair is designed around a simple but strict idea:
-
-> An agent should verify, correct, and govern itself before it stores memory or acts with confidence.
-
-Most agent systems focus on acting, tool use, and memory accumulation.  
-Clair focuses on **correction before memory**.
-
----
-
-## Core Concept
-
-Clair uses three primary system loops:
-
-### 1. Reasoning Loop
-
-Forms candidate answers, solves tasks, selects strategies, and routes work through the system.
-
-### 2. Calibration Loop
-
-Checks truth, confidence, evidence quality, uncertainty, contradiction, and whether information is safe to output or store.
-
-### 3. Maintenance Loop
-
-Audits memory, reduces drift, detects stale or weak information, and preserves long-term system health.
-
-Together, these loops act as a correction-oriented control system for cognition, memory, and behavior.
+This public repository is used to share safe project summaries, benchmark-style results, development direction, and high-level design goals without exposing the internal source code or construction methods.
 
 ---
 
 ## Current Status
 
-**Experimental prototype. Not production-ready.**
+Clair V3.3 has reached the stage of a serious working prototype.
 
-Clair V3.3 is currently being tested against GAIA-style benchmark tasks, smoke tests, and custom failure-class tests.
+The system has demonstrated:
 
-The system is still under active development, with the current focus on:
+- Stable behavior under structured testing
+- Controlled answer behavior
+- Memory-centered reasoning experiments
+- Verification and calibration workflows
+- Document/context handling improvements
+- Early tool-use and fallback routing
+- GAIA-style benchmark stress testing
+- Correction-first development discipline
 
-- tool routing
-- document support
-- local/free lookup tools
-- answer grounding
-- memory safety
-- benchmark-driven improvement
-
----
-
-## Current GAIA-Style Baseline
-
-Latest logged real GAIA-style run:
-
-- **Behavior:** 50/50
-- **Answer quality:** 33/50
-- **Average answer score:** 0.66
-- **Generic responses:** 0
-- **Unrelated memory errors:** 0
-- **Needs tool/document support:** 33
-
-This means Clair is currently behavior-stable, but still limited by tool access, document parsing, and external evidence retrieval.
-
-The current priority is reducing failures caused by missing or weak tool/document support. Because apparently cognition is not enough, the machine also needs to read PDFs, inspect spreadsheets, and survive the swamp of file formats humanity invented for no reason.
+Clair is not presented as finished or production-ready. Current work is focused on restoring and strengthening the core cognitive architecture before expanding capabilities further.
 
 ---
 
-## Why Clair Is Different
+## Core Project Goal
 
-Most agent systems are designed around:
+Clair is intended to become a:
 
-- acting quickly
-- calling tools
-- storing memory
-- chaining prompts
-- producing useful output
+> Governed cognitive reasoner built around memory, reflection, verification, and moral constraint, designed to improve through interaction rather than static answering alone.
 
-Clair is designed around:
+The long-term goal is not to build a simple chatbot or benchmark solver.
 
-- verifying before storage
-- correction dominance
-- memory governance
-- strict module boundaries
-- uncertainty awareness
-- failure-class testing
-- benchmark pressure
-- long-term drift reduction
+The goal is to build a system that can:
 
-The goal is not just to make an agent that answers questions.
-
-The goal is to build an inspectable cognitive architecture that can improve without poisoning its own memory, over-trusting weak evidence, or collapsing into generic responses.
+- Understand task shape
+- Detect missing information
+- Use memory responsibly
+- Distinguish temporary context from durable memory
+- Verify before trusting
+- Recover from uncertainty
+- Select tools by capability
+- Reflect on failures
+- Improve over time within moral and safety boundaries
 
 ---
 
-## Design Principles
+## Design Philosophy
 
-Clair follows several core rules:
+Clair is built around several core principles:
 
-1. **Know what the system does not know**
-2. **Keep module responsibilities simple and separate**
-3. **Verify before storing**
-4. **Correct before reinforcing**
-5. **Preserve memory health over time**
-6. **Prefer traceable reasoning paths**
-7. **Avoid unnecessary complexity**
-8. **Improve through benchmark pressure**
-9. **Benefit humans without becoming reckless**
-10. **Stay inspectable**
+1. **Know what she does not know**
+2. **Use memory carefully, not blindly**
+3. **Prefer verification over confidence**
+4. **Treat uncertainty as a signal to act, not a stopping point**
+5. **Keep cognitive modules focused on one job**
+6. **Correct mistakes instead of hiding them**
+7. **Avoid benchmark-specific shortcuts**
+8. **Preserve a governed moral code**
+
+The project is being developed as a cognitive architecture first, not a neural-network-first system.
 
 ---
 
-## Architecture Overview
+## Cognitive Direction
 
-Clair is organized into layered cognitive modules.
+Clair’s intended reasoning pattern is:
 
 ```text
 Input
-  ↓
-Intake
-  ↓
-Perception
-  ↓
-Reasoning
-  ↓
-Calibration
-  ↓
-Planning
-  ↓
-Action Selection
-  ↓
-Execution
-  ↓
-Evaluation
-  ↓
-Reflection
-  ↓
-Memory
-  ↓
-Maintenance
+ → Understand task
+ → Detect missing needs
+ → Check context
+ → Retrieve relevant memory
+ → Select capability
+ → Use tools or fallbacks
+ → Verify evidence
+ → Apply governance
+ → Answer or refuse
+ → Reflect and learn
