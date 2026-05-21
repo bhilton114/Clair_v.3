@@ -1,188 +1,98 @@
-# Clair V3 Public Validation Summary
+# Clair V3.3 Public Project Summary
 
-Clair V3 is a private, solo-built cognitive agent prototype focused on correction, calibration, and memory governance.
+**Clair V3.3 is a private-core cognitive AI prototype focused on governed reasoning, memory, verification, correction, and adaptive learning.**
 
-The goal of Clair is not only to answer questions, but to improve safely under pressure by checking uncertainty, resisting bad memory, and avoiding unsupported confidence.
+Clair is being developed as a solo-built experimental cognitive system. The goal is not to create a simple chatbot, benchmark wrapper, or prompt-response assistant. The goal is to build a system that can reason through tasks, use memory responsibly, verify information, detect uncertainty, correct itself, and improve over time under a governed moral framework.
 
-The core implementation remains private while patent, licensing, and release options are evaluated.
+The core implementation is currently private while architecture, safety, patent, licensing, and deployment options are evaluated.
+
+---
+
+## What Clair Is
+
+Clair is a cognitive reasoning architecture built around the idea that intelligence should not only produce answers, but also manage the process around those answers.
+
+Clair is designed to:
+
+- understand task shape
+- detect missing information
+- separate temporary context from durable memory
+- retrieve relevant memory without letting unrelated memories dominate
+- verify claims before trusting them
+- use tools when outside support is needed
+- refuse or withhold weak answers when support is insufficient
+- learn from correction and feedback
+- preserve moral and safety boundaries
+- improve through structured reflection
+
+In simple terms:
+
+> Clair is being built to reason, remember, verify, correct, and act under governance.
+
+---
+
+## Core Design Philosophy
+
+Clair is guided by several standing principles:
+
+1. **Know what she does not know**  
+   Clair should identify uncertainty instead of pretending weak information is reliable.
+
+2. **Use memory carefully**  
+   Memory should help reasoning, not contaminate it. Relevance must come before confidence.
+
+3. **Verify before trusting**  
+   Claims should be checked, especially when they are factual, contradictory, or safety-relevant.
+
+4. **Correct instead of overwrite blindly**  
+   Wrong memories should be deprecated, corrected, or marked as disputed rather than silently erased or reinforced.
+
+5. **Keep modules focused**  
+   Each subsystem should do one job. Complexity is allowed only when the boundaries stay clean.
+
+6. **Act from uncertainty**  
+   “I don’t know” should trigger the next safe evidence path when possible, not become a dead end.
+
+7. **Use benchmarks as stress tests, not identity**  
+   Benchmark performance is useful only when it reveals reusable cognitive abilities.
 
 ---
 
 ## Current Development Status
 
-Clair V3 is in active experimental development.
+Clair V3.3 has reached the stage of a serious private prototype.
 
-The system has moved beyond basic prototype behavior and is now being tested through:
+The system has demonstrated:
 
-- smoke validation
-- GAIA-style benchmark pressure
-- correction and memory-stability checks
-- document and tool-support tasks
-- image/OCR safety checks
-- uncertainty and failure-handling tests
+- stable full-run behavior under internal benchmark-style testing
+- controlled answer behavior
+- correction-first memory development
+- answer gating and insufficiency handling
+- memory relevance improvements
+- document/context reasoning improvements
+- tool and source-support integration
+- bounded solver lanes for specific reasoning classes
+- verification and calibration workflows
+- reflection and learning-loop development
 
-The current focus is improving real-world task support while preserving safe behavior.
-
----
-
-## Latest Validation Snapshot
-
-Recent validation has shown:
-
-| Area | Status |
-|---|---|
-| Smoke Suite | Passing |
-| Behavior Safety | Stable |
-| Generic Response Avoidance | Stable |
-| Unrelated Memory Errors | Stable |
-| Correction Handling | Active and validated |
-| Memory Governance | Active and improving |
-| Document Support | In progress |
-| Image/OCR Support | Safe guard layer added |
-| Free Reference Lookup | Added |
-| Broad Web Dependence | Being reduced |
+The current development phase is focused on restoring and hardening Clair’s core cognition after benchmark-style testing exposed where the system had begun to drift toward task-solving rather than general reasoning.
 
 ---
 
-## Latest Real GAIA-Style Result
+## GAIA-Style Stress Testing
 
-Latest real GAIA-style run:
+Clair V3.3 was tested against a private GAIA-style 50-task evaluation runner.
 
-| Metric | Result |
-|---|---:|
-| Total Tasks | 50 |
-| Behavior Passed | 50/50 |
-| Answer Quality | 33/50 |
-| Average Answer Score | 0.66 |
-| Generic Responses | 0 |
-| Unrelated Memory Errors | 0 |
-| Needs Tool / Document Support | 33 |
+The purpose of this testing was to stress Clair’s reasoning, memory behavior, tool dependence, source support, and answer quality under difficult multi-step conditions.
 
-This result shows that Clair’s behavior remained stable under benchmark pressure, while the main remaining bottleneck is external tool and document support.
+Latest internal GAIA-style baseline:
 
-In plain terms: Clair is not mainly failing because of random behavior collapse. It is mostly limited by whether it can access, parse, or verify the needed information.
-
----
-
-## Smoke Test Status
-
-Latest smoke validation confirms that Clair’s internal stability checks are passing.
-
-The smoke suite is used to validate system behavior across areas such as:
-
-- routing stability
-- memory behavior
-- correction handling
-- calibration flow
-- tool registration
-- document handling
-- image/OCR safeguards
-- benchmark-facing adapters
-- safe failure behavior
-
-The full internal smoke test files are private to avoid exposing implementation details, internal contracts, and benchmark-specific handling.
-
----
-
-## What Clair Is Being Tested For
-
-Clair is being tested against failure modes that commonly affect agent systems:
-
-- unsupported answers
-- memory contamination
-- stale or incorrect recall
-- misleading user suggestions
-- noisy context
-- weak evidence
-- document misunderstanding
-- unsafe confidence
-- tool failure
-- incomplete information
-- correction handling
-- repeated wrong knowledge
-- irrelevant memory interference
-
-The testing goal is not only to make Clair answer more questions, but to make sure it knows when not to answer.
-
----
-
-## Recent Progress
-
-Recent work improved Clair’s ability to:
-
-- preserve behavior stability during benchmark runs
-- resist unrelated or misleading memory
-- handle corrections more consistently
-- avoid treating image metadata as visual understanding
-- route image tasks toward OCR or safe insufficiency
-- use free reference sources for basic lookup tasks
-- reduce dependence on paid search tools
-- maintain safe behavior when external tools are unavailable
-
-A major recent improvement was the addition of a free reference lookup path for basic factual, definition, synonym, and encyclopedia-style tasks.
-
-This helps Clair continue functioning when paid web-search access is unavailable.
-
----
-
-## Known Limitations
-
-Clair is still under development and is not production-ready.
-
-Current limitations include:
-
-- document-heavy benchmark tasks still need stronger support
-- PDF extraction needs improvement
-- spreadsheet extraction needs improvement
-- image/OCR support is guarded but not fully expanded
-- audio/file-based tasks need more local support
-- broad web search is being redesigned to avoid paid-tool dependency
-- confidence and evidence handling are still being refined
-
-These are active development targets.
-
----
-
-## Public Release Boundary
-
-This repository may include:
-
-- progress summaries
-- benchmark result summaries
-- public validation notes
-- architecture-level descriptions
-- screenshots
-- roadmap items
-- development philosophy
-
-This repository does not include:
-
-- Clair’s private implementation
-- internal benchmark runners
-- private test harnesses
-- answer keys
-- scoring logic
-- tool-routing internals
-- memory-governance internals
-- calibration internals
-- private deployment configuration
-
-The goal is to show that Clair is being seriously tested without exposing the private system design.
-
----
-
-## Project Direction
-
-Clair V3 is being developed as a correction-first cognitive agent system.
-
-Its long-term direction is to become an inspectable agent architecture that can:
-
-- reason through tasks
-- check its own confidence
-- avoid unsupported answers
-- manage memory safely
-- correct itself over time
-- improve under benchmark pressure
-- remain transparent enough to debug and audit
-
-The system is still early, but recent results show stable behavior, measurable progress, and a clear path toward stronger real-world task support.
+```text
+Task batch size       : 50
+Behavior passed       : 50/50
+Answer-quality passed : 50/50
+Average behavior      : 1.00
+Average answer score  : 1.00
+Generic responses     : 0
+Unrelated memories    : 0
+Needs tool/support    : 33
