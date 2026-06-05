@@ -8,76 +8,49 @@ This public repository is used to share safe project summaries, benchmark-style 
 
 ---
 
-## Current Status
+## Current Restoration Status
 
-Clair V3.3 has reached the stage of a serious working prototype.
+Project Clair is currently in a V3 restoration phase focused on rebuilding Clair as a reusable resourcefulness-based cognitive reasoner rather than a benchmark-shaped answer system.
 
-The system has demonstrated:
+The current architecture centers on the following path:
 
-- Stable behavior under structured testing
-- Controlled answer behavior
-- Memory-centered reasoning experiments
-- Verification and calibration workflows
-- Document/context handling improvements
-- Early tool-use and fallback routing
-- GAIA-style benchmark stress testing
-- Correction-first development discipline
+NeedDetector → CapabilityPlanner → ResourcefulnessCoordinator → Tool/Source Fetch → EvidenceScorer → AnswerGate → ReasoningEngine → Memory/Reflection
 
-Clair is not presented as finished or production-ready. Current work is focused on restoring and strengthening the core cognitive architecture before expanding capabilities further.
+### Latest Completed Milestone
 
----
+RESTORE-011 has been completed.
 
-## Core Project Goal
+Clair can now answer supported headquarters lookup questions through the restored resourcefulness pipeline. The verified end-to-end path is:
 
-Clair is intended to become a:
+NeedDetector → CapabilityPlanner → ResourcefulnessCoordinator → source fetch → EvidenceScorer → AnswerGate
 
-> Governed cognitive reasoner built around memory, reflection, verification, and moral constraint, designed to improve through interaction rather than static answering alone.
+Confirmed example:
 
-The long-term goal is not to build a simple chatbot or benchmark solver.
+> OpenAI is headquartered at 1455 3rd Street, San Francisco, California, U.S.
 
-The goal is to build a system that can:
+### Regression Coverage Confirmed
 
-- Understand task shape
-- Detect missing information
-- Use memory responsibly
-- Distinguish temporary context from durable memory
-- Verify before trusting
-- Recover from uncertainty
-- Select tools by capability
-- Reflect on failures
-- Improve over time within moral and safety boundaries
+The current regression set includes:
 
----
+- Headquarters lookup
+- France population lookup
+- Python version lookup
+- Apple CEO lookup
+- Claim verification
+- Direct math
+- Owner safe-failure behavior
 
-## Design Philosophy
+### Current Restoration Rule
 
-Clair is built around several core principles:
+Every fix must teach Clair a reusable method for solving a class of problems. Clair should not be patched with benchmark-specific shortcuts, hardcoded answers, or one-off task logic.
 
-1. **Know what she does not know**
-2. **Use memory carefully, not blindly**
-3. **Prefer verification over confidence**
-4. **Treat uncertainty as a signal to act, not a stopping point**
-5. **Keep cognitive modules focused on one job**
-6. **Correct mistakes instead of hiding them**
-7. **Avoid benchmark-specific shortcuts**
-8. **Preserve a governed moral code**
+### Next Target
 
-The project is being developed as a cognitive architecture first, not a neural-network-first system.
+RESTORE-012: Owner Attribute Validation
 
----
+Goal:
 
-## Cognitive Direction
-
-Clair’s intended reasoning pattern is:
-
-```text
-Input
- → Understand task
- → Detect missing needs
- → Check context
- → Retrieve relevant memory
- → Select capability
- → Use tools or fallbacks
+Make “Who owns X now?” work through the same source-supported attribute path while rejecting founder, CEO, investor, parent-company, and partner confusion.
  → Verify evidence
  → Apply governance
  → Answer or refuse
