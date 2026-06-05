@@ -1,0 +1,59 @@
+# Clair Restoration Ledger
+
+## Current Phase
+
+V3 Resourcefulness Restoration
+
+## Current Architecture Path
+
+NeedDetector → CapabilityPlanner → ResourcefulnessCoordinator → Tool/Source Fetch → EvidenceScorer → AnswerGate → ReasoningEngine → Memory/Reflection
+
+## Closed Restoration Items
+
+### RESTORE-011 — Headquarters Lookup Restoration
+
+**Status:** Closed
+
+**Goal:** Restore source-supported headquarters lookup through Clair’s reusable resourcefulness pipeline.
+
+**Confirmed path:**
+
+NeedDetector → CapabilityPlanner → ResourcefulnessCoordinator → source fetch → EvidenceScorer → AnswerGate
+
+**Confirmed answer example:**
+
+OpenAI is headquartered at 1455 3rd Street, San Francisco, California, U.S.
+
+**Regression held for:**
+
+- Headquarters lookup
+- France population lookup
+- Python version lookup
+- Apple CEO lookup
+- Claim verification
+- Direct math
+- Owner safe-failure behavior
+
+## Active / Next Restoration Items
+
+### RESTORE-012 — Owner Attribute Validation
+
+**Status:** Next
+
+**Goal:** Make “Who owns X now?” work through the same source-supported attribute path.
+
+**Required behavior:**
+
+Clair must distinguish true ownership from nearby but incorrect relationships, including:
+
+- Founder
+- CEO
+- Investor
+- Parent company
+- Partner
+- Subsidiary
+- Operator
+- Publisher
+- Distributor
+
+**Rule:** If ownership is not source-supported, Clair must refuse the unsupported answer instead of guessing.
